@@ -20,7 +20,6 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 src_path = os.getcwd() + "/index.json"
-os.environ["OPENAI_API_KEY"] = "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"
 
 ai_bot = GPTSimpleVectorIndex.load_from_disk(src_path)
 

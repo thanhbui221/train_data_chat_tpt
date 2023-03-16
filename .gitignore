@@ -2,3 +2,4 @@
 **/.Dockerfile
 **/fly.toml
 **/.dockerignore
+**/.Dockerfile
