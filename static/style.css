@@ -1,0 +1,119 @@
+body{
+    font-family: "SanFrancisco";
+    background-color: white;
+}
+h1{
+    color: black;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;
+    font-size: 40px;
+}
+h3{
+    color: black;
+    font-size: 20px;
+    margin-top: 3px;
+    text-align: center;
+}
+#chatbox{
+    background-color: #fff;
+    border: 1px solid #e5e5ea;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    font-family: "SanFrancisco";
+    font-size: 1.25rem;
+    margin: 0 auto 1rem;
+    max-width: 600px;
+    padding: 0.5rem 1.5rem;
+}
+
+#chatbox p{
+    border-radius: 1.15rem;
+    line-height: 1.25;
+    max-width: 75%;
+    padding: 0.5rem .875rem;
+    position: relative;
+    word-wrap: break-word;
+}
+
+#chatbox p::before,
+#chatbox p::after {
+  bottom: -0.1rem;
+  content: "";
+  height: 1rem;
+  position: absolute;
+}
+
+#userInput {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+#textInput {
+    width: 87%;
+    border: none;
+    border-bottom: 3px solid #29c5f6;
+    font-family: monospace;
+    font-size: 17px;
+}
+
+#buttonInput {
+    padding: 3px;
+    font-family: monospace;
+    font-size: 17px;
+}
+
+.userText {
+    align-self: flex-end;
+    background-color: #248bf5;
+    color: #fff; 
+}
+
+.userText::before {
+    border-bottom-left-radius: 0.8rem 0.7rem;
+    border-right: 1rem solid #248bf5;
+    right: -0.35rem;
+    transform: translate(0, -0.1rem);
+}
+  
+.userText::after {
+    background-color: #fff;
+    border-bottom-left-radius: 0.5rem;
+    right: -40px;
+    transform:translate(-30px, -2px);
+    width: 10px;
+}
+
+p[class^="userText"] {
+    margin: 0.5rem 0;
+    width: fit-content;
+  }
+
+.botText {
+    align-items: flex-start;
+    background-color: #e5e5ea;
+    color: #000;
+}
+
+.botText::before {
+    border-bottom-right-radius: 0.8rem 0.7rem;
+    border-left: 1rem solid #e5e5ea;
+    left: -0.35rem;
+    transform: translate(0, -0.1rem);
+}
+  
+.botText::after {
+    background-color: #fff;
+    border-bottom-right-radius: 0.5rem;
+    left: 20px;
+    transform: translate(-30px, -2px);
+    width: 10px;
+}
+
+#tidbit {
+    position:absolute;
+    bottom:0;
+    right:0;
+    width: 300px;
+}

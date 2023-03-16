@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../static/style.css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1>Tika Chatbot - 
+            <a href="https://hocvien.tiki.vn/" title="For more information" target="_blank">
+                For more information
+            </a>
+        </h1>
+        <div>
+        <div id="chatbox">
+            <p class="botText">
+                <span>Hi! I'm Tika - chatbot for Tiki sellers.</span>
+            </p>
+        </div>
+        <div id="userInput">
+            <input id="textInput" type="text" name="msg" placeholder="Message">
+            <input id="buttonInput" type="submit" value="Send">
+        </div>
+        <script>
+            $(document).ready(function() {
+                function getBotResponse() {
+                    var rawText = $('#textInput').val();
+                    var userHtml = '<p class="userText">' + rawText + '</p>';
+                    $('#textInput').val("");
+                    $('#chatbox').append(userHtml);
+                    document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+                    $.get("/getChatBotResponse", { msg: rawText }).done(function(data) {
+                        var botHtml = '<p class="botText">'+ data + '</p>';
+                        $("#chatbox").append(botHtml);
+                        document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+                    });
+                }
+                $('#textInput').keypress(function(e) {
+                    if(e.which == 13) {
+                        getBotResponse();
+                    }
+                });
+                $('#buttonInput').click(function() {
+                    getBotResponse();
+                })
+            });  
+        </script>
+        </div>
+    </body>
+</html>
