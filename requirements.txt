@@ -1,8 +1,5 @@
 fastapi
 uvicorn
-openai
-python-multipart
-python-dotenv
 llama-index
 langchain
 jinja2
