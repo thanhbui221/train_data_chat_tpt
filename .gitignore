@@ -3,3 +3,4 @@
 **/fly.toml
 **/.dockerignore
 **/.Dockerfile
+**/.__pycache__
