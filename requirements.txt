@@ -1,5 +1,7 @@
 fastapi
 uvicorn
+wheel
+setuptools
 llama-index
 langchain
 jinja2
