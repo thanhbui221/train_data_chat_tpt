@@ -19,7 +19,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory="templates")
 
-src_path = os.getcwd() + "/index.json"
+src_path = os.getcwd() + "/index_text-davinci-003.json"
 
 ai_bot = GPTSimpleVectorIndex.load_from_disk(src_path)
 
