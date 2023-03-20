@@ -5,3 +5,4 @@
 **/.Dockerfile
 **/.__pycache__
 **/index.json
+**/index_gpt-3.5-turbo.json
