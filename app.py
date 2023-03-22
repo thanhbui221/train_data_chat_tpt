@@ -18,7 +18,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory="templates")
 
-src_path = os.getcwd() + "/vector_index_gpt-3.5-turbo.json"
+src_path = os.getcwd() + "/vector_index_gpt-3.5-turbo_v2.json"
 
 ai_bot = GPTSimpleVectorIndex.load_from_disk(src_path)
 
