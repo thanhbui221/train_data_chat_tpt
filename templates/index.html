@@ -12,11 +12,12 @@
                 For more information
             </a>
         </h1>
+        <span style="font-style:italic">Created by thanh.bui4, and amazing PM tra.tran1. This project is purely for fun and has no connection to TIKI.</span>
         <div>
         <div id="chatbox">
             <p class="botText">
-                <span>Chào các bạn. Mình là Tika - Chatbot chuyên giải đáp các thắc mắc của nhà bán trên TIKI.</span>
-                <span style="font-style:italic">Created by thanh.bui4, and amazing PM tra.tran1</span>
+                <span>Hello | Bonjour | Привет | Xin chào. Mình là Tika - Chatbot chuyên giải đáp các thắc mắc của nhà bán trên TIKI.</span>
+                
             </p>
         </div>
         <div id="userInput">
@@ -35,14 +36,13 @@
                         response = data.response;
                         sources = data.sources;
                         var botHtml = '<p class="botText">' + response + '</p>';
-                        var linkHtml = ''
-                        botHtml += '<ol>Tham khảo thêm ở đây nha: ';
+                        var linkHtml = '';
                         for (let source of sources){
                             if (source != null){
-                                linkHtml += '<li>' + source + '</li>'
+                                linkHtml += '<li>' + source + '</li>';
                             }
                         }
-                        linkHtml = '<p class="botText"><ol>Tham khảo thêm ở đây nha: ' + linkHtml + '</ol></p>'
+                        linkHtml = '<p class="botText"><ol>Tham khảo thêm ở đây nha: ' + linkHtml + '</ol></p>';
                         $("#chatbox").append(botHtml);
                         $("#chatbox").append(linkHtml);
                         document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
