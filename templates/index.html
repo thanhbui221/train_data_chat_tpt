@@ -12,7 +12,7 @@
                 For more information
             </a>
         </h1>
-        <h3><span style="font-style:italic">Created by thanh.bui4, and amazing PM tra.tran1. This project is purely for fun and has no connection to TIKI.</span></h3>
+        <h3><span style="font-style:italic">Created by thanh.bui4, and PM tra.tran1. This project is purely for fun and has no connection to TIKI.</span></h3>
         <div>
         <div id="chatbox">
             <p class="botText">
@@ -35,14 +35,10 @@
                     $.get("/getChatBotResponse", { msg: rawText }).done(function(data) {
                         response = data.response;
                         sources = data.sources;
-                        var botHtml = '<p class="botText">' + response + '</p>';
-                        var linkHtml = '';
-                        for (let source of sources){
-                            if (source != null){
-                                linkHtml += '<li>' + source + '</li>';
-                            }
-                        }
-                        linkHtml = '<ol class="botText">Tham khảo thêm ở đây nha: ' + linkHtml + '</ol>';
+                        let botHtml = '<p class="botText">' + response + '</p>';
+                        let source = sources[0];
+                        let linkHtml = '<a href="' + source + '">đây</a> nha!';
+                        linkHtml = '<p class="botText">' + linkHtml + '</p>';
                         $("#chatbox").append(botHtml);
                         $("#chatbox").append(linkHtml);
                         document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
