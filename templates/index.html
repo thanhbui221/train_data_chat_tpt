@@ -7,7 +7,7 @@
 
     </head>
     <body>
-        <h1>Tika Chatbot - 
+        <h1>Terah Chatbot - 
             <a href="https://hocvien.tiki.vn/" title="For more information" target="_blank">
                 For more information
             </a>
@@ -16,7 +16,7 @@
         <div>
         <div id="chatbox">
             <p class="botText">
-                <span>Hello | Bonjour | Привет | Xin chào. Mình là Tika - Chatbot chuyên giải đáp các thắc mắc của nhà bán trên TIKI.</span>
+                <span>Hello | Bonjour | Привет | Xin chào. Mình là Terah - Chatbot chuyên giải đáp các thắc mắc của nhà bán trên TIKI.</span>
                 
             </p>
         </div>
@@ -35,10 +35,9 @@
                     $.get("/getChatBotResponse", { msg: rawText }).done(function(data) {
                         response = data.response;
                         sources = data.sources;
-                        let source = sources[0];
-                        let linkHtml = '<a href="' + source + '">đây</a> nha!';
-                        linkHtml = 'Tham khảo thêm ở ' + linkHtml + '</p>';
-                        let botHtml = '<p class="botText">' + response + linkHtml + '</p>';
+                        var linkHtml = '<a href="' + sources[0] + '">đây</a> nha!';
+                        linkHtml = ' Tham khảo thêm ở ' + linkHtml + '</p>';
+                        var botHtml = '<p class="botText">' + response + linkHtml + '</p>';
                         $("#chatbox").append(botHtml);
                         document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
                     });
