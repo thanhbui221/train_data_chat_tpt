@@ -33,8 +33,11 @@ def home(request: Request):
 
 @app.get("/getChatBotResponse")
 def get_bot_response(msg: str):
+    data = dict()
     response = ai_bot.query(msg, response_mode="compact")
-    return str(response.response)
+    data["response"] = str(response.response)
+    data["sources"] = [f"https://hocvien.tiki.vn/faq/{source_node.extra_info.get('source')}/" for source_node in response.source_nodes]
+    return data
 
 if __name__ == "__main__":
     uvicorn.run("main:app")

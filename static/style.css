@@ -46,22 +46,27 @@ h3{
 }
 
 #userInput {
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%;
+    margin: 0 auto 1rem;
+    max-width: 600px;
+    padding: 0.5rem 1.5rem; 
+    max-width: 600px;
+    padding: 0.5rem 1.5rem;
 }
+
 #textInput {
-    width: 87%;
     border: none;
+    width: 87%;
     border-bottom: 3px solid #29c5f6;
     font-family: monospace;
     font-size: 17px;
+    margin: auto
 }
 
 #buttonInput {
     padding: 3px;
     font-family: monospace;
     font-size: 17px;
+    margin: auto
 }
 
 .userText {

@@ -2,7 +2,9 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="../static/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
     </head>
     <body>
         <h1>Tika Chatbot - 
@@ -29,7 +31,14 @@
                     $('#chatbox').append(userHtml);
                     document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
                     $.get("/getChatBotResponse", { msg: rawText }).done(function(data) {
-                        var botHtml = '<p class="botText">'+ data + '</p>';
+                        response = data.response;
+                        sources = data.sources;
+                        var botHtml = '<p class="botText">'+ response + '<br>';
+                        botHtml += '<ol>Tham khảo thêm ở đây nha: ';
+                        for (let source of sources){
+                            botHtml += '<li>' + source + '</li>'
+                        }
+                        botHtml += '</ol></p>'
                         $("#chatbox").append(botHtml);
                         document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
                     });
