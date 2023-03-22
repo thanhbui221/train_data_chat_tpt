@@ -35,12 +35,11 @@
                     $.get("/getChatBotResponse", { msg: rawText }).done(function(data) {
                         response = data.response;
                         sources = data.sources;
-                        let botHtml = '<p class="botText">' + response + '</p>';
                         let source = sources[0];
                         let linkHtml = '<a href="' + source + '">đây</a> nha!';
-                        linkHtml = '<p class="botText">' + linkHtml + '</p>';
+                        linkHtml = 'Tham khảo thêm ở ' + linkHtml + '</p>';
+                        let botHtml = '<p class="botText">' + response + linkHtml + '</p>';
                         $("#chatbox").append(botHtml);
-                        $("#chatbox").append(linkHtml);
                         document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
                     });
                 }
