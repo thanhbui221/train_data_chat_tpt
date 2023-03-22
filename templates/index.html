@@ -12,7 +12,7 @@
                 For more information
             </a>
         </h1>
-        <span style="font-style:italic">Created by thanh.bui4, and amazing PM tra.tran1. This project is purely for fun and has no connection to TIKI.</span>
+        <h3><span style="font-style:italic">Created by thanh.bui4, and amazing PM tra.tran1. This project is purely for fun and has no connection to TIKI.</span></h3>
         <div>
         <div id="chatbox">
             <p class="botText">
@@ -42,7 +42,7 @@
                                 linkHtml += '<li>' + source + '</li>';
                             }
                         }
-                        linkHtml = '<p class="botText"><ol>Tham khảo thêm ở đây nha: ' + linkHtml + '</ol></p>';
+                        linkHtml = '<ol class="botText">Tham khảo thêm ở đây nha: ' + linkHtml + '</ol>';
                         $("#chatbox").append(botHtml);
                         $("#chatbox").append(linkHtml);
                         document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
