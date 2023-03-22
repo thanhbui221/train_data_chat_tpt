@@ -15,7 +15,8 @@
         <div>
         <div id="chatbox">
             <p class="botText">
-                <span>Hi! I'm Tika - chatbot for Tiki sellers.</span>
+                <span>Chào các bạn. Mình là Tika - Chatbot chuyên giải đáp các thắc mắc của nhà bán trên TIKI.</span>
+                <span style="font-style:italic">Created by thanh.bui4, and amazing PM tra.tran1</span>
             </p>
         </div>
         <div id="userInput">
@@ -33,16 +34,17 @@
                     $.get("/getChatBotResponse", { msg: rawText }).done(function(data) {
                         response = data.response;
                         sources = data.sources;
-                        var botHtml = response + '<br>';
+                        var botHtml = '<p class="botText">' + response + '</p>';
+                        var linkHtml = ''
                         botHtml += '<ol>Tham khảo thêm ở đây nha: ';
                         for (let source of sources){
                             if (source != null){
-                                botHtml += '<li>' + source + '</li>'
+                                linkHtml += '<li>' + source + '</li>'
                             }
                         }
-                        botHtml += '</ol>'
-                        botHtml = '<p class="botText">'+ botHtml + '</p>'
+                        linkHtml = '<p class="botText"><ol>Tham khảo thêm ở đây nha: ' + linkHtml + '</ol></p>'
                         $("#chatbox").append(botHtml);
+                        $("#chatbox").append(linkHtml);
                         document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
                     });
                 }
